@@ -52,8 +52,7 @@
 </head>
 
 <body>
-    
-   <!-- Status bar overlay for fullscreen mode-->
+       <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
@@ -169,7 +168,7 @@
 </a></div>
               
             <div class="center sliding" ><h3>Explore</h3></div>
-            <div class="col-50 right sliding" style="margin-right:10px;"><a href="#" data-panel="right" class="open-panel"><i class="	fa fa-ellipsis-v" style="font-size:24px;"></i>
+            <div class="col-50 right sliding" style="margin-right:10px;"><a href="#" data-panel="right" class="open-panel"><i class="		fa fa-gear" style="font-size:24px;"></i>
 </a></div>
           </div>
         </div>
@@ -264,7 +263,7 @@
                 <span class="tabbar-label">Category</span></a>
             
             <a href="#view-3" data-picker=".picker-shoppingcart" class="tab-link active open-indicator color-gray open-picker"> <i class="fa fa-shopping-cart"  style="font-size:28px;">
-                <span class="badge bg-red" style="position:absolute; top:1px;">6</span></i>
+                <span class="simpleCart_quantity badge bg-red" style="position:absolute; top:1px;"></span></i>
                 <span class="tabbar-label">Shopping Cart</span></a>
             
            
@@ -313,15 +312,46 @@
     </div>
     <div class="picker-modal-inner">
       <div class="content-block">
+          
+          <!-- create a checkout button -->
+<a class="simpleCart_checkout" href="javascript:;"></a>
+
+<!-- button to empty the cart -->
+<a class="simpleCart_empty" href="javascript:;"></a>
+
+<!-- show the cart -->
+<div class="simpleCart_items"></div>
+
+<!-- cart total (ex. $23.11)-->
+<span>Total</span><div class="simpleCart_total"></div>
+
+<!-- cart quantity (ex. 3) -->
+<span>Cart Quantity</span><div class="simpleCart_quantity"></div>
+
+<!-- tax cost (ex. $1.38) -->
+<span>Tax</span><div class="simpleCart_tax"></div>
+
+<!-- shipping (ex. $5.00) -->
+          <span>Delivery</span><div>$350 or Free</div>
+
+<!-- grand total, including tax and shipping (ex. $28.49) -->
+<span>Grand Total</span><div class="simpleCart_grandTotal"></div>
+
+
    
+          
           
       </div>
     </div>
   </div>
+     
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
+    
+    <script src="js/simpleCart.js"></script>
+     <script src="js/jquery.1.6.1.min.js"></script>
 
 
     <script type="text/javascript" src="cordova.js"></script>
