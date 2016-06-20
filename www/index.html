@@ -44,7 +44,7 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
       <link rel="stylesheet" href="font-awesome-4.6.2/css/font-awesome.min.css">
-  
+  <link href="css/notie.css" rel="stylesheet" type="text/css">
     
    
 
@@ -244,14 +244,6 @@
           </div>
         </div>
           
-          <!-- About Popup -->
-  <div class="popup popup-about">
-    <div class="content-block">
-      <p>About</p>
-      <p><a href="#" class="close-popup">Close popup</a></p>
-      <p>Lorem ipsum dolor ...</p>
-    </div>
-  </div>
         
         <!-- Bottom Tabbar-->
       <div class="toolbar tabbar tabbar-labels">
@@ -352,15 +344,83 @@
     
     <script src="js/simpleCart.js"></script>
      <script src="js/jquery.1.6.1.min.js"></script>
-
+<script src="js/notie.js"></script>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-        
-        
-    </script>
+     
+
+          <script>
+    // * Notie popup*//
+			
+			notie.setOptions({
+				colorSuccess: '#57BF57',
+				colorWarning: '#D6A14D',
+				colorError: '#E1715B',
+				colorInfo: '#f06292',
+				colorNeutral: '#A0A0A0',
+				colorText: '#FFFFFF',
+				animationDelay: 300,
+				backgroundClickDismiss: true
+			});
+			
+            function success() {
+                notie.alert(1, 'Success!');
+            }
+            
+            function warning() {
+                notie.alert(2, 'Warning<br><b>with</b><br><i>HTML</i><br><u>included.</u>', 2);
+            }
+            
+            function error() {
+                notie.alert(3, 'Error.', 2);
+            }
+            
+            function info() {
+                notie.alert(4, 'One item Added to cart', 2);
+            }
+            
+            function confirm() {
+                notie.confirm('Are you sure you want to do that?<br><b>That\'s a bold move...</b>', 'Yes', 'Cancel', function() {
+                    notie.alert(1, 'Good choice! :D', 2);
+                }, function() {
+					notie.alert(3, 'Aw, why not? :(', 2);
+				});
+            }
+            
+            function input() {
+				notie.input({
+					type: 'text',
+					placeholder: 'name@example.com',
+					prefilledValue: ''
+				}, 'Please enter your email address:', 'Submit', 'Cancel', function(valueEntered) {
+                    notie.alert(1, 'You entered: ' + valueEntered, 2);
+                }, function(valueEntered) {
+					notie.alert(3, 'You cancelled with this value: ' + valueEntered, 2);
+				});
+            }
+            
+            function select() {
+				notie.select('Demo item #1, owner: Jane Smith',
+				[
+					{ title: 'Share' },
+					{ title: 'Open', color: '#57BF57' },
+				 	{ title: 'Edit', type: 2 },
+					{ title: 'Delete', type: 3 }
+				],
+				function() {
+					notie.alert(1, 'Share item!', 3);
+				}, function() {
+					notie.alert(1, 'Open item!', 3);
+				}, function() {
+					notie.alert(2, 'Edit item!', 3);
+				}, function() {
+					notie.alert(3, 'Delete item!', 3);
+				});
+			}
+            
+		</script>
+           
 </body>
 
 </html>
