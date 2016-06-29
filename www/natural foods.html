@@ -13,8 +13,22 @@
 </div>
 
 <div class="page">
-<div class="page-content">
-
+        <!-- Search Bar with "searchbar-init" class for auto initialization -->
+    <form class="searchbar searchbar-init" data-search-list=".list-block-search" data-search-in=".item-title" data-found=".searchbar-found" data-not-found=".searchbar-not-found">
+        <div class="searchbar-input">
+            <input type="search" placeholder="Search">
+            <a href="#" class="searchbar-clear"></a>
+        </div>
+        <a href="#" class="searchbar-cancel">Cancel</a>
+    </form>
+    
+    <div class="searchbar-overlay"></div>
+    
+    <div class="page-content">
+        <div class="content-block searchbar-not-found">
+                Store Not Found
+        </div>
+        
 
 <div class="content-block-title">Songs</div>
 <div class="list-block media-list">
@@ -147,8 +161,6 @@
     
   </ul>
 </div>
-        
-    </div>
 </div>
 
 
